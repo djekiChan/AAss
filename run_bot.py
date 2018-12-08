@@ -4,8 +4,9 @@ from config import *
 import requests
 
 
-def write_msg(user_id, text):
-    vk_bot.method('messages.send', {'user_id': user_id, 'message': text, 'random_id': random.randint(0, 5000)})
+
+def write_msg_attach(user_id, text, att_url):
+    vk_bot.method('messages.send', {'user_id': user_id, 'attachment': att_url, 'message': text, 'random_id': random.randint(0, 5000)})
 
 
 vk_bot = vk_api.VkApi(token=ACCESS_TOKEN)
@@ -29,7 +30,11 @@ while True:
         #print(update)
         user_id = update[0][3]
         user_name = vk_bot.method('users.get', {'user_ids': user_id})
-        write_msg(user_id, 'привет, ' + (user_name[0]['first_name'])) #сообщение пользователю
+        #write_msg(user_id, 'привет, ' + (user_name[0]['first_name'])) #сообщение пользователю
+        if 'картинк' in update[0][6]:
+            write_msg_attach(user_id,
+                             'вот тебе охуенная картинка',
+                             'photo-165937659_456294700')
         print(str(user_name[0]['first_name']) + ' ' +
               str(user_name[0]['last_name']) + ' написал(а) боту - ' + str(update[0][6])) #сообщение нам
 
