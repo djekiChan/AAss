@@ -23,6 +23,7 @@ while True:
                                                                       ts=ts)).json()
 
     update = long_poll['updates']
+    print(long_poll)
     if update[0][0] == 4:
         print(long_poll)
         #print(update)
@@ -33,7 +34,7 @@ while True:
               str(user_name[0]['last_name']) + ' написал(а) боту - ' + str(update[0][6])) #сообщение нам
 
         #Меняем ts для следущего запроса
-ts = long_poll['ts']
+    ts = long_poll['ts']
 
 
 
