@@ -54,6 +54,8 @@ while True:
                      '\n' \
                      '"операторы и функции(операт)" - расскажет об том, что тебе не понятно.\n' \
                      '\n' \
+                     '"мем" - скину годный мемас' \
+                     '\n' \
                      'P.S.Пока что, я знаю только "Pascal", но в дальнейшем я буду умнее)\n' \
                      '\n' \
                      'Пример ошибок:\n' \
@@ -162,6 +164,26 @@ while True:
                  "And, or, not - логические операции\n" \
                  "\n"
             write_msg(user_id, op)
+        if 'мем' in update[0][6]:
+            if random.randint(0, 10) > 1:
+                group_id = -45745333
+                post_id = last_post(group_id, 1, 1, 'owner')
+                attach = 'wall' + str(group_id) + '_' + str(post_id)
+                write_msg_attach(user_id, 'Вот тебе годный мемас', attach)
+            if random.randint(0, 10) > 5:
+                group_id = -172949311
+                post_id = last_post(group_id, 1, 1, 'owner')
+                attach = 'wall' + str(group_id) + '_' + str(post_id)
+                write_msg_attach(user_id, 'Вот тебе годный мемас', attach)
+            if random.randint(0, 10) < 10:
+                group_id = -112996378
+                post_id = last_post(group_id, 1, 1, 'owner')
+                attach = 'wall' + str(group_id) + '_' + str(post_id)
+                write_msg_attach(user_id, 'Вот тебе годный мемас', attach)
+
+
+
+
 
         print(str(user_name[0]['first_name']) + ' ' +
               str(user_name[0]['last_name']) + ' написал(а) боту - ' + str(update[0][6])) #сообщение нам
