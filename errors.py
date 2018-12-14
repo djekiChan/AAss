@@ -34,5 +34,5 @@ errors = [
     '".." expected  -  Пропущен ".."',
     "No enclosing For, While or Repeat statement  -  Нет закрывающих FOR, WHILE или REPEAT операторов"
 ]
-#Список ошибок, используется в run_bot. 
+#Список ошибок, используется в run_bot.
 
